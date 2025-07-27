@@ -1,7 +1,10 @@
 name: Deploy Astro site to GitHub Pages
 on:
   push:
-    branches: [ "main" ] # Change if your default branch is different
+    branches: [ "main" ]
+
+permissions:
+  contents: write   # ✅ allow pushing to gh-pages
 
 jobs:
   build-deploy:
