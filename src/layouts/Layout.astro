@@ -1,0 +1,170 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+}
+
+const { 
+  title = "AMIGO Living - Premium Ladies PG in SG Palya Bangalore | Fully Furnished Luxury Rooms",
+  description = "AMIGO Living offers premium fully furnished luxury rooms for ladies in SG Palya Bangalore. Single, Double & Triple sharing options. 4 times meals, WiFi, security, near Christ University & Forum Mall.",
+  keywords = "ladies pg bangalore, pg for women bangalore, fully furnished pg, luxury pg accommodation, sg palya pg, christ university pg, forum mall pg, kerala food pg, secure ladies pg"
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="AMIGO Living" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="AMIGO Living" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "AMIGO Living",
+      "description": "Premium Ladies PG Accommodation in Bangalore",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "SG Palya",
+        "addressLocality": "Bangalore",
+        "addressRegion": "Karnataka",
+        "addressCountry": "IN"
+      },
+      "telephone": ["+91-9744407313", "+91-9400572070"],
+      "amenityFeature": [
+        {"@type": "LocationFeatureSpecification", "name": "WiFi"},
+        {"@type": "LocationFeatureSpecification", "name": "Lift"},
+        {"@type": "LocationFeatureSpecification", "name": "Power Backup"},
+        {"@type": "LocationFeatureSpecification", "name": "Security Camera"},
+        {"@type": "LocationFeatureSpecification", "name": "Housekeeping"},
+        {"@type": "LocationFeatureSpecification", "name": "Hot Water"},
+        {"@type": "LocationFeatureSpecification", "name": "Washing Machine"}
+      ],
+      "nearbyAttraction": [
+        "Christ University",
+        "IBC Knowledge Park",
+        "St. Joseph College",
+        "Forum Mall"
+      ]
+    }
+    </script>
+    
+    <!-- Preload critical fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #1f2937;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  .btn-primary {
+    background: linear-gradient(135deg, #6B46C1 0%, #9333EA 100%);
+    color: white;
+    padding: 0.875rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(107, 70, 193, 0.3);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(107, 70, 193, 0.4);
+    color: white;
+  }
+  
+  .btn-secondary {
+    background: transparent;
+    color: #6B46C1;
+    padding: 0.875rem 2rem;
+    border: 2px solid #6B46C1;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-secondary:hover {
+    background: #6B46C1;
+    color: white;
+    transform: translateY(-2px);
+  }
+  
+  .section-padding {
+    padding: 5rem 0;
+  }
+  
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 1rem;
+    }
+    
+    .section-padding {
+      padding: 3rem 0;
+    }
+  }
+</style>
